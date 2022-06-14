@@ -5,4 +5,8 @@ WORKDIR /apps
 COPY ./apps /apps
 RUN pip install --no-cache-dir -r requirements.txt
 
+#Time
+ENV TW=Asia/Taipei
+RUN ln -snf /usr/share/zoneinfo/$TW /etc/localtime && echo $TW > /etc/timezone
+
 CMD ["python", "app.py"]
