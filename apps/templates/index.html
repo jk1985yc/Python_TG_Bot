@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Send Massage{% endblock %}
+
+{% block content%}
+<div id="wrap">
+    <h1>發送訊息</h1>
+    <form method="post" action="">
+        <select name="chat_id">
+            {% for id in chat_id %}
+            <option value="{{ id }}">{{ id }}</option>
+            {% endfor %}
+        </select>
+        <!-- <input type="text" name="s_content"> -->
+        <textarea rows="5" cols="60" name="s_content" placeholder="請輸入訊息..."></textarea>
+        <input type="submit" name="submit" value="Send">
+    <h1>發送訊息至全部群組</h1>
+        <!-- <input type="text" name="a_content"> -->
+        <textarea rows="5" cols="60" name="a_content" placeholder="請輸入訊息..."></textarea>
+        <input type="submit" name="submit" value="Send_All">
+    </form>
+    <form method="post" action="">
+    <h1>發送檔案</h1>
+        <select name="chat_id">
+            {% for id in chat_id %}
+            <option value="{{ id }}">{{ id }}</option>
+            {% endfor %}
+        </select>
+        <input type="text" name="file_name" placeholder="請輸入檔名...">
+        <input type="submit" name="submit" value="Send_File">
+        <p>如圖片需加入敘述請在此輸入,如無需求請留空</p>
+        <input type="text" name="caption" placeholder="請輸入敘述...">
+    <h1>發送檔案至全部群組</h1>
+        <input type="text" name="files_name" placeholder="請輸入檔名...">
+        <input type="submit" name="submit" value="Send_All_File">
+        <p>如圖片需加入敘述請在此輸入,如無需求請留空</p>
+        <input type="text" name="captions" placeholder="請輸入敘述...">
+    </form>
+</div>
+{% endblock %}

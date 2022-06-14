@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}UPLOAD{% endblock %}
+{% block content %}
+<div id="warp">
+    <h1>上傳檔案</h1>
+    <p>檔案上傳僅支援 &nbsp; 'pdf', 'png', 'jpg', 'jpeg', 'gif'</p>
+    <form action="" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" ><br>
+        <input type="submit" value="Upload">
+    </form>
+</div>
+{% endblock %}

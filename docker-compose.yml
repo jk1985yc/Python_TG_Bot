@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  tg_bot:
+    build: .
+    image: tg_bot
+    container_name: tg_bot
+    hostname: tg_bot
+    networks:
+        - local_vlan
+    volumes:
+        - ./apps:/apps
+    ports:
+        - 1234:80
+
+networks:
+  local_vlan:

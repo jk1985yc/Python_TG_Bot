@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}File List{% endblock %}
+
+{%block content%}
+<div id="wrap">
+    <ul>
+        {% for file in files %}
+        <li>
+            <a href="/file_list/{{file}}">{{file}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{%endblock%}

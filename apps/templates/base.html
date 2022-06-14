@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="{{ url_for('static', filename='/imgs/potential.png') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='/style.css') }}">
+    </head>
+    <body>
+        <li><a href="/">主頁</a></li>
+        <li><a href="/upload_file">上傳文件</a></li>
+        <li><a href="/file_list">文件清單</a></li>
+        <!-- Flask flash function Part-->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <h3><p>{{ message }}</p></h3>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <!-- Part END-->
+
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
