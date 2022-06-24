@@ -2,3 +2,8 @@
 ```
 docker-compose up -d
 ```
+
+### Config PATH
+```
+apps/config.ini
+```
